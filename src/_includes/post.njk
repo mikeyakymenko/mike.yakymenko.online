@@ -1,0 +1,32 @@
+---
+layout: base.njk
+---
+
+<!-- post -->
+<section class="post">
+    <header>
+        <h1><a href="{{ page.url }}">{{ title }}</a></h1>
+        <div class="meta">
+            <time class="meta-date">
+                <i class="fa fa-clock-o"></i> {{ date | postDate }} в {{ date | postTime }}
+            </time>
+            <span class="meta-tags">
+                {% if tags %}
+                    <i class="fa fa-tags"></i>
+                    {% for tag in tags %}
+                        <a href="/tags/{{ tag | slug }}">{{ tag }}</a>,
+                    {% endfor %}
+                {% endif %}
+            </span>
+        </div>
+    </header>
+    {% if poster %}
+        <div class="post-poster">
+            <img src="{{ poster }}" alt="">
+        </div>
+    {% endif %}
+    <article front-role="article">
+       {{ content | safe }}
+    </article>
+</section>
+<!-- /post -->

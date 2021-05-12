@@ -1,0 +1,48 @@
+.external {
+  display: flex;
+  justify-content: center;
+  margin: 50px 10% 50px 10%;
+  .link + .link {
+    margin-left: 40px;
+  }
+  .link {
+    text-align: center;
+    width: 33.3333%;
+    filter: grayscale(100%);
+    &:hover {
+      filter: grayscale(0);
+    }
+    a {
+      text-decoration: none;
+    }
+    .icon {
+      @include inline-middle;
+      width: 48px;
+      height: 48px;
+      background-size: 48px 48px !important;
+      background-repeat: no-repeat !important;
+      background-position: center center !important;
+      &.insta {
+        background: url(/static/images/insta.png);
+      }
+      &.tele {
+        background: url(/static/images/tele.png);
+      }
+    }
+    .description {
+      h4 {
+        margin: 5px 0;
+      }
+      article {
+        font-size: 18px;
+        line-height: 1.2;
+      }
+    }
+  }
+}
+
+.contacts-list {
+  @include clear-list;
+  text-align: center;
+  list-style: none;
+}

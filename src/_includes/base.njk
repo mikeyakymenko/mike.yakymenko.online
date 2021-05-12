@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>{{ title }} – Mike Yakymenko's blog</title>
+
+<meta name="author" content="Mike Yakymenko" />
+{# <link rel="shortcut icon" href="/images/icon.png" type="image/x-icon" /> #}
+<!-- Render -->
+
+{# <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css"> #}
+<link rel="stylesheet" href="{{ '/css/style.css' | url }}" />
+
+{# <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-47720515-1', 'macgera.name');
+  ga('send', 'pageview');
+</script> #}
+
+</head>
+<body>
+
+<!-- header -->
+<header class="">
+    <div class="links">
+        <span class="item">
+            <!-- <h1> -->
+                <a href="/">Mike Yakymenko's blog</a>
+            <!-- </h1> -->
+        </span>
+        <span class="item"><a href="/about">About</a></span>
+        <span class="item"><a href="/archive">Archive</a></span>
+        <span class="item"><a href="">RSS</a></span>
+    </div>
+</header>
+<!-- /header -->
+
+{{ content | safe }}
+
+<!-- footer -->
+<footer>
+  <span class="copyrights">2010–2019 Mike Yakymenko</span>
+</footer>
+<!-- /footer -->
+
+</body>
+</html>

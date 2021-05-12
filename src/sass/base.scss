@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css?family=Abel&display=swap');
+
+$text-color: #303030;
+$link-color: #3498db;
+
+body {
+  line-height: 150%;
+  background: #fff;
+  font-family: Arial, Helvetica;
+  position: relative;
+  color: $text-color;
+  padding: 0;
+  margin: 0;
+  &.open-menu {
+    overflow: hidden;
+  } // &.open-menu
+  @include bp($xs, $sm) {
+    @include fontsize(18);
+  }
+  @include bp($md, $lg, $xl) {
+    @include fontsize(22);
+  }
+} // body
+
+img {
+  display: block;
+  max-width: 100%;
+  &.portrait {
+    max-height: 86vh;
+  } // &.portrait
+} // img
+
+a {
+  color: $link-color;
+  @include transition(all, 0.3s, ease);
+  &:hover {
+    text-decoration: none;
+  } // &:hover
+} // a
+
+
+h1, h2, h3, h4, h5 {
+  font-weight: normal;
+  line-height: 1;
+} // h1, h2, h3, h4, h5

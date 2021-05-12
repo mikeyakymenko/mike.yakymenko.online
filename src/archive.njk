@@ -1,0 +1,31 @@
+---
+layout: base.njk
+---
+
+<!-- posts_list -->
+<section class="posts-list">
+{% for year in collections.years | reverse %}
+    <h3>{{ year }}</h3>
+    <ul>
+        {% for post in collections.blog | reverse | byYear(year) %}
+        <li>
+            <h2><a href="{{ post.url | url }}">{{ post.data.title }}</a></h2>
+            <div class="meta">
+                <time class="meta-date">
+                    <i class="fa fa-clock-o"></i> {{ post.data.date | postDate }} в {{ post.data.date | postTime }}
+                </time>
+                <span class="meta-tags">
+                    {% if post.data.tags %}
+                        <i class="fa fa-tags"></i>
+                        {% for tag in post.data.tags %}
+                            <a href="/tags/{{ tag | slug }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                </span>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+{% endfor %}
+</section>
+<!-- /posts_list -->

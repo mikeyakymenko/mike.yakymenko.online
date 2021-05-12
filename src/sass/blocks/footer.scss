@@ -1,0 +1,21 @@
+body > footer {
+  margin: 10px 20% 10px 20%;
+  text-align: center;
+  line-height: 1.4;
+  .copyrights, .designed-by {
+    display: block;
+    @include fontsize(14);
+    font-style: italic;
+    @include transition(all, 0.3s, ease);
+    opacity: 0.5;
+    &:hover {
+      opacity: 1;
+    } // &:hover
+  } // .copyrights, .designed-by
+  .copyrights {
+    &:before {
+      content: "\00a9";
+      margin-right: 5px;
+    } // &:before
+  } // copyrights
+} // body > footer

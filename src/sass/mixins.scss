@@ -1,0 +1,87 @@
+// transition
+@mixin transition($property, $duration, $timing) {
+  transition-property: $property;
+  transition-duration: $duration;
+  transition-timing-function: $timing;
+}
+
+// font-size
+@mixin fontsize($value) {
+  font-size: $value + px;
+  font-size: rem($value);
+}
+
+// icons
+@mixin icon($url, $w, $h) {
+  background-size: $w $h;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url($url);
+}
+
+// lists
+@mixin clear-list {
+  margin: 0;
+  padding: 0;
+  li {
+    list-style: none;
+  }
+}
+
+@mixin clear-list-inline {
+  margin: 0;
+  padding: 0;
+  li {
+    list-style: none;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+// inlines
+@mixin inline-middle {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@mixin inline-top {
+  display: inline-block;
+  vertical-align: top;
+}
+
+// clearfix
+@mixin clearfix {
+  &:before,
+  &:after {
+    display: table;
+    content: ' ';
+  } // &:before, &:after
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin table {
+  table-layout: fixed;
+  display: table;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@mixin table-cell {
+  display: table-cell;
+  vertical-align: top;
+  box-sizing: border-box;
+}
+
+$xs: "(max-width: 575px)";
+$sm: "(min-width: 576px) and (max-width: 767px)";
+$md: "(min-width: 768px) and (max-width: 991px)";
+$lg: "(min-width: 992px) and (max-width: 1199px)";
+$xl: "(min-width: 1200px)";
+
+@mixin bp($point...) {
+  @each $item in $point {
+    @media #{$item} { @content; }
+  }
+}
